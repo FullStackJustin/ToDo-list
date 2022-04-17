@@ -1,9 +1,0 @@
-body {
-    padding: 50px; 
-    background-color: greenyellow;
-    font-family: sans-serif;
-}
-#app {
-    display: flex;
-    justify-content: center;
-}
