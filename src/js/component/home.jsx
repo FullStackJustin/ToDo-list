@@ -1,4 +1,5 @@
 import React, { component } from "react";
+
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
 
@@ -19,7 +20,7 @@ function Home(props) {
 					Add
 				</button>
 			</form>
-			<div className="filters btn-group stack-exception">
+			<div id="filters" className="filters btn-group stack-exception">
 				<button
 					type="button"
 					className="btn toggle-btn"
