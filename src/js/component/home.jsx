@@ -1,51 +1,20 @@
-import React, { component } from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useState } from "react";
+import Form from "./Form.jsx";
+import ToDoList from "./ToDoList.js";
 
 //create your first component
-function Home(props) {
+function Home() {
+	const [inputText, setInputText] = useState("");
+	const [todos, setTodos] = useState([]);
 	return (
 		<div>
-			<h1>To-Do List</h1>
-			<form>
-				<input
-					type="text"
-					id="new-todo-input"
-					className="input input__lg"
-					name="text"
-					autoComplete="off"
-				/>
-				<button type="submit" className="btn btn__primary btn__lg">
-					Add
-				</button>
-			</form>
-			<div id="filters" className="filters btn-group stack-exception">
-				<button
-					type="button"
-					className="btn toggle-btn"
-					aria-pressed="true">
-					<span className="visually-hidden">Show </span>
-					<span>all</span>
-					<span className="visually-hidden"> tasks</span>
-				</button>
-				<button
-					type="button"
-					className="btn toggle-btn"
-					aria-pressed="false">
-					<span className="visually-hidden">Show </span>
-					<span>Active</span>
-					<span className="visually-hidden"> tasks</span>
-				</button>
-				<button
-					type="button"
-					className="btn toggle-btn"
-					aria-pressed="false">
-					<span className="visually-hidden">Show </span>
-					<span>Completed</span>
-					<span className="visually-hidden"> tasks</span>
-				</button>
-			</div>
+			<Form
+				inputText={inputText}
+				setInputText={setInputText}
+				todos={todos}
+				setTodos={setTodos}
+			/>
+			<ToDoList todos={todos} setTodos={setTodos} />
 		</div>
 	);
 }
